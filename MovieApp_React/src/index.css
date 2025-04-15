@@ -55,7 +55,28 @@
         @apply px-5 py-12 xs:p-10 max-w-7xl mx-auto flex flex-col relative z-10;
     }
 
+    .MovieDetailsView{
+        @apply flex flex-col justify-center items-center content-center;
 
+        & .movie-page-head{
+            @apply flex bg-cover bg-center bg-fixed relative h-auto w-full h-svh content-center justify-center shadow-[inset_0px_-104px_80px_-3px_#000] ;
+
+            & .release-date{
+                @apply sm:text-3xl font-extrabold hidden sm:block;
+            }
+            & .watch_trailer button {
+                @apply flex flex-row items-center gap-2 relative h-11 overflow-hidden rounded-4xl bg-rust px-6 py-3.5 text-white transition-all duration-300 hover:bg-red-600 hover:ring-2 hover:ring-neutral-800 hover:ring-offset-2
+            }
+            & img{
+                @apply size-4 object-contain;
+            }
+        }
+        & .movie-page-hero {
+                @apply flex content-center justify-center items-center  self-end gap-10 lg:mx-40 sm:mx-20;
+        }
+
+
+    }
 
     .slide {
         @apply bg-cover bg-center h-auto w-full sm:min-h-[300px] md:min-h-[500px] grid grid-cols-8 bg-fixed shadow-[inset_0px_-104px_80px_-3px_#000];
@@ -64,10 +85,10 @@
             @apply lg:col-span-6 m-2 flex-row md:p-4 col-span-full content-center max-w-3/4 mb-40 z-10 ;
         }
         & h2{
-            @apply drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)];
+            @apply drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ;
         }
         & p {
-            @apply drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]  hidden lg:block ;
+            @apply drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,100)] font-sans hidden lg:block text-[19px];
         }
 
         & .slide_poster {
@@ -166,8 +187,26 @@
             @apply text-penn-red font-medium text-base;
         }
     }
-}
+    .info-page{
+        @apply text-white;
 
+        & img{
+            @apply max-w-[90px];
+        }
+        & .techstack{
+            @apply flex text-center flex-col items-center max-w-[200px] text-red-600 font-mono;
+        }
+    }
+}
+@layer utilities {
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
 @utility text-gradient {
     @apply bg-linear-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent;
 }

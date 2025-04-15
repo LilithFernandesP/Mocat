@@ -12,6 +12,8 @@ import ShowMoreMovies from "../components/ShowMoreMovies.jsx";
 import {useNavigate} from "react-router-dom";
 import TrendingMovies from "../components/TrendingMovies.jsx";
 import Carousel from "../components/TrendingMoviesView.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
  //main page, fetch movie data and call components to show it
 const App = () => {
@@ -108,6 +110,7 @@ const App = () => {
 
     return (
         <main>
+            <Navbar />
             <header className='m-0'>
                 <Carousel>
                     {trendingMovies.map((movie) => (
@@ -118,8 +121,7 @@ const App = () => {
             <div className='wrapper pt-0'>
 
                 <section className='all-movies'>
-
-                        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                    <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
 
                     <div className='searchTermsContainer'>
                         <SortByMenu sortBy={sortBy} setSortBy={setSortBy}/>
@@ -143,7 +145,9 @@ const App = () => {
                     <ShowMoreMovies page={page} setPage={setPage}/>
                 </section>
             </div>
+            <Footer />
         </main>
+
     )
 }
 

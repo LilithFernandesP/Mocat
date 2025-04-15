@@ -42,7 +42,7 @@ const TrendingMovies = ({ movie }) => {
                     (video) => video.type === 'Trailer' && video.site === 'YouTube'
                 );
                 setTrailerId(trailer || trailerAlternate || null);
-                console.log(trailer)
+
             } catch (error) {
                 console.error('Erro ao buscar dados do filme:', error);
             }
@@ -73,7 +73,7 @@ const TrendingMovies = ({ movie }) => {
                             {genres ? genres.join(' • ') : 'N/A'}
                         </p>
                     </div>
-                    <h2 className='text-4xl md:text-7xl pt-2 pb-2 uppercase  max-h-[160px] md:max-h-full overflow-hidden whitespace-nowrap'>
+                    <h2 className='text-[min(10vw,70px)] pt-2 pb-2 uppercase  max-h-[160px] md:max-h-full overflow-hidden whitespace-nowrap'>
                         <button className='hover:text-[74px] hover:text-red-900 transition-all'
                                 onClick={() => onMovieClick(id)}>{title}</button>
                     </h2>
@@ -82,7 +82,7 @@ const TrendingMovies = ({ movie }) => {
                     </p>
                 </div>
 
-                <div className='rating text-white justify-self-end  mt-10 font-extrabold gap-3'>
+                <div className='rating text-white justify-self-end mt-10 font-extrabold gap-3'>
                     <div className='watch_trailer'>
                         <a href={`https://www.youtube.com/watch?v=${trailerId?.key || ''}`} target='_blank'>
                             <button>

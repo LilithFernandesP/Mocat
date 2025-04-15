@@ -26,6 +26,7 @@ const CategoryMenu = ({ genreId, setGenreId }) => {
         { id: "35", name: "Comedy" },
         { id: "80", name: "Crime" },
         { id: "99", name: "Documentary" },
+        { id: "27", name: "Horror" },
     ];
     //#endregion
     return (
