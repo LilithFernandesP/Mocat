@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import {useDebounce} from 'react-use';
-import {updateSearchCount} from '../appwrite.js'
 import '../App.css'
 import Search from '../components/Search.jsx'
 import Spinner from '../components/Spinner.jsx'
